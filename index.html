@@ -43,10 +43,14 @@
         </div>
         <div id="earnInfo">   <!-- tip total & avg tip must be reflected as currency -->
             <div class="boxTitle">
-                <h3>My Earnings Info</h3></div>
-            <P>Tip total:</P>
-            <p>Meal count:</p>
-            <p>Average tip per meal:</p>
+                <h3>My Earnings Info</h3>
+            </div>
+            <P>Tip total:</P>  <!-- add all tip amounts -->
+            <p>Meal count:</p> <!-- total number of meals ++ every time submit is pressed -->
+            <p>Average tip per meal:</p> <!-- takes tip total and divides by meal count for average -->
+        </div>
+        <div id="resetButton">
+        	<button ng-click="main.resetForm()">Reset</button>
         </div>
     </div>
 </body>

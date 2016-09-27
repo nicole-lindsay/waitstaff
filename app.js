@@ -15,4 +15,9 @@ angular.module('myApp', [])
 			main.tipPercent = "";
 		};
 
+		main.resetForm = function(){
+			/*needs to reset everything, perhaps call cancelTransaction()
+			and add more values to reset after that?*/
+		};
+
 	});
