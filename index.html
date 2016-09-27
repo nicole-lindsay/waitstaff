@@ -14,7 +14,7 @@
     <h1>Waitstaff Calculator</h1>
     <div id="waitstaff">
         <div id="mealDetails">
-            <form name="myForm">
+            <form name="myForm" ng-submit="main.submitAmounts(myForm.$valid)">
                 <div class="boxTitle">
                     <h3>Enter meal details</h3>
                 </div>
@@ -28,17 +28,18 @@
                 <br>
                 <div id="buttons">
                     <button>Submit</button>
-                    <button>Cancel</button>
+                    <button ng-click="main.cancelTransaction()">Cancel</button>
                 </div>
             </form>
         </div>
         <div id="custCharges">  <!-- must be reflected as currency -->
             <div class="boxTitle">
                 <h3>Customer Charges</h3></div>
-            <p>Subtotal: {{ main.baseMeal }}</p>
-            <p>Tip: {{ main.tipPercent }}</p>
+            <p>Subtotal: {{ main.baseMeal | number:2 | currency }}</p>
+            <p>Tip: </p> <!-- {{tip amt calculated w/tip percent & base amt}} -->
+            <p>Tax: </p> <!-- tax amt calculated w/tax rate & base amt -->
             <hr>
-            <p>Total:</p>
+            <p>Total:</p> <!-- subtotal + tip + tax -->
         </div>
         <div id="earnInfo">   <!-- tip total & avg tip must be reflected as currency -->
             <div class="boxTitle">
