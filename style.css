@@ -1,0 +1,12 @@
+#mealDetails, #custCharges, #earnInfo {
+	border-style: solid;
+	border-width: thin;
+}
+
+.boxTitle {
+	border-bottom: solid;
+}
+
+h1 {
+	text-align: center;
+}
