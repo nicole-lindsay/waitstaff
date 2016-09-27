@@ -1,12 +1,28 @@
+body {
+	font-family: 'Slabo 27px', serif;
+}
+
 #mealDetails, #custCharges, #earnInfo {
 	border-style: solid;
 	border-width: thin;
+	padding-left: 7em;
+	padding-right: 7em;
+}
+
+#waitstaff {
+	display: flex;
+	justify-content: space-around;
 }
 
 .boxTitle {
 	border-bottom: solid;
+	text-align: center;
 }
 
 h1 {
 	text-align: center;
+}
+
+#buttons {
+	margin-left: 2em;
 }

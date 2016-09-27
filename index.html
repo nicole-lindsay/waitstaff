@@ -5,38 +5,48 @@
     <meta charset="UTF-8">
     <title>Waitstaff Calculator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </head>
 
 <body ng-controller="myCtrl as main">
     <h1>Waitstaff Calculator</h1>
-    <div id="mealDetails">
-        <div class="boxTitle">
-            <h3>Enter meal details</h3></div>
-        <p>Base meal price:</p>$
-        <input type="number">
-        <p>Tax rate:</p>%
-        <input type="number">
-        <p>Tip percentage:</p>%
-        <input type="number">
-        <button>Submit</button>
-        <button>Cancel</button>
-    </div>
-    <div id="custCharges">
-        <div class="boxTitle">
-            <h3>Customer Charges</h3></div>
-        <p>Subtotal:</p>
-        <p>Tip:</p>
-        <hr>
-        <p>Total:</p>
-    </div>
-    <div id="earnInfo">
-        <div class="boxTitle">
-            <h3>My Earnings Info</h3></div>
-        <P>Tip total:</P>
-        <p>Meal count:</p>
-        <p>Average tip per meal:</p>
+    <div id="waitstaff">
+        <div id="mealDetails">
+            <form name="myForm">
+                <div class="boxTitle">
+                    <h3>Enter meal details</h3>
+                </div>
+                <p>Base meal price:</p>$
+                <input type="number" placeholder="9.99" ng-model="main.baseMeal" ng-min="0" required>  <!-- must allow decimal points, no negative numbers -->
+                <p>Tax rate:</p>%
+                <input type="number" placeholder="6" ng-model="main.taxRate" ng-min="0" required>
+                <p>Tip percentage:</p>%
+                <input type="number" placeholder="20" ng-model="main.tipPercent" ng-min="0" required>
+                <br>
+                <br>
+                <div id="buttons">
+                    <button>Submit</button>
+                    <button>Cancel</button>
+                </div>
+            </form>
+        </div>
+        <div id="custCharges">  <!-- must be reflected as currency -->
+            <div class="boxTitle">
+                <h3>Customer Charges</h3></div>
+            <p>Subtotal: {{ main.baseMeal }}</p>
+            <p>Tip: {{ main.tipPercent }}</p>
+            <hr>
+            <p>Total:</p>
+        </div>
+        <div id="earnInfo">   <!-- tip total & avg tip must be reflected as currency -->
+            <div class="boxTitle">
+                <h3>My Earnings Info</h3></div>
+            <P>Tip total:</P>
+            <p>Meal count:</p>
+            <p>Average tip per meal:</p>
+        </div>
     </div>
 </body>
 
