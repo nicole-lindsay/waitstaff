@@ -8,13 +8,11 @@ angular.module('myApp', [])
 		main.tip = 0;
 		main.tax = 0;
 		main.total = 0;
+		main.tipTotal = 0;
+		main.mealCount = 0;
+		main.average = 0;
 
 		main.submitAmounts = function(valid){
-			/*if/else statement here to reflect
-			that if the inputs are valid, then amounts in custCharges
-			and earnInfo change. Else, there is an alert to remind
-			to enter positive numbers. Base amt * tip amt, base amt * tax rate
-			*/
 			if (valid) {
 				main.submitted = true;
 				var tipPercent = main.tipPercent;
@@ -23,6 +21,7 @@ angular.module('myApp', [])
 				main.tip = (tipPercent / 100) * baseMeal;
 				main.tax = (taxRate / 100) * baseMeal;
 				main.total = main.tip + main.tax + baseMeal;
+				main.mealCount++;
 			} else {
 				alert("You need to enter a positive number in all fields");
 			}
@@ -35,8 +34,10 @@ angular.module('myApp', [])
 		};
 
 		main.resetForm = function(){
-			/*needs to reset everything, perhaps call cancelTransaction()
-			and add more values to reset after that?*/
+			cancelTransaction();
+			main.tipTotal = 0;
+			main.mealCount = 0;
+			main.average = 0;
 		};
 
 	});
