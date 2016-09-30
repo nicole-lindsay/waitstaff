@@ -2,9 +2,6 @@ angular.module('myApp', [])
 	.controller('myCtrl', function(){
 		var main = this;
 		main.submitted = false;
-		main.baseMeal = 0;
-		main.taxRate = 0;
-		main.tipPercent = 0;
 		main.tip = 0;
 		main.tax = 0;
 		main.total = 0;
@@ -22,6 +19,8 @@ angular.module('myApp', [])
 				main.tax = (taxRate / 100) * baseMeal;
 				main.total = main.tip + main.tax + baseMeal;
 				main.mealCount++;
+				main.tipTotal += main.tip;
+				main.average = main.tipTotal / main.mealCount;
 			} else {
 				alert("You need to enter a positive number in all fields");
 			}
@@ -31,13 +30,15 @@ angular.module('myApp', [])
 			main.baseMeal = 0;
 			main.taxRate = 0;
 			main.tipPercent = 0;
+			main.tip = 0;
+			main.tax = 0;
+			main.total = 0;
 		};
 
 		main.resetForm = function(){
-			cancelTransaction();
+			main.cancelTransaction();
 			main.tipTotal = 0;
 			main.mealCount = 0;
 			main.average = 0;
 		};
-
 	});

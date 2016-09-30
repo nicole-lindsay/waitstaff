@@ -28,7 +28,7 @@
                 <br>
                 <div id="buttons">
                     <input type="submit" name="submit">
-                    <button ng-click="main.cancelTransaction()">Cancel</button>
+                    <button type="button" ng-click="main.cancelTransaction()">Cancel</button>
                 </div>
             </form>
         </div>
@@ -42,15 +42,12 @@
             <p>Total:</p> {{ main.total | number:2 | currency }}
         </div>
         <div id="earnInfo">
-            <!-- tip total & avg tip must be reflected as currency -->
             <div class="boxTitle">
                 <h3>My Earnings Info</h3>
             </div>
-            <P>Tip total:</P>
-            <!-- add all tip amounts -->
+            <P>Tip total:</P>{{ main.tipTotal | number:2 | currency }}
             <p>Meal count:</p>{{ main.mealCount }}
-            <p>Average tip per meal:</p>
-            <!-- takes tip total and divides by meal count for average -->
+            <p>Average tip per meal:</p>{{ main.average | number:2 | currency }}
         </div>
         <div id="resetButton">
             <button ng-click="main.resetForm()">Reset</button>
