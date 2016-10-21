@@ -1,4 +1,4 @@
-angular.module('myApp', [])
+angular.module('myApp', ['ngRoute'])
 	.controller('myCtrl', function(){
 		var main = this;
 		main.submitted = false;

@@ -1,0 +1,22 @@
+{
+  "name": "waitstaff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicole-lindsay/waitstaff.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicole-lindsay/waitstaff/issues"
+  },
+  "homepage": "https://github.com/nicole-lindsay/waitstaff#readme",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
