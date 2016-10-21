@@ -1,0 +1,28 @@
+<div id="mealDetails">
+    <form name="myForm" ng-submit="main.submitAmounts(myForm.$valid)">
+        <div class="boxTitle">
+            <h3>Enter meal details</h3>
+        </div>
+        <p>Base meal price:</p>$
+        <input type="number" name='baseMeal' placeholder="9.99" ng-model="main.baseMeal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required>
+        <p>Tax rate:</p>%
+        <input type="number" placeholder="6" ng-model="main.taxRate" ng-min="0" required>
+        <p>Tip percentage:</p>%
+        <input type="number" placeholder="20" ng-model="main.tipPercent" ng-min="0" required>
+        <br>
+        <br>
+        <div id="buttons">
+            <input type="submit" name="submit">
+            <button type="button" ng-click="main.cancelTransaction()">Cancel</button>
+        </div>
+    </form>
+</div>
+<div id="custCharges">
+    <div class="boxTitle">
+        <h3>Customer Charges</h3></div>
+    <p>Subtotal: {{ main.baseMeal | number:2 | currency }}</p>
+    <p>Tax: </p> {{ main.tax | number:2 | currency }}
+    <p>Tip: </p> {{ main.tip | number:2 | currency }}
+    <hr>
+    <p>Total:</p> {{ main.total | number:2 | currency }}
+</div>
