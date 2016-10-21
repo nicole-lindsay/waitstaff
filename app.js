@@ -38,7 +38,7 @@ angular.module('myApp', ['ngRoute'])
             main.total = main.tip + main.tax + baseMeal;
             $rootScope.mealCount++;
             $rootScope.tipTotal += main.tip;
-            $rootScope.average = main.tipTotal / main.mealCount;
+            $rootScope.average = $rootScope.tipTotal / $rootScope.mealCount;
         } else {
             alert("You need to enter a positive number in all fields");
         }
@@ -56,7 +56,6 @@ angular.module('myApp', ['ngRoute'])
 
 .controller('myEarnings', function($rootScope) {
     var main = this;
-$rootScope.attempt = "something";
     main.resetForm = function() {
         main.cancelTransaction();
         $rootScope.tipTotal = 0;
