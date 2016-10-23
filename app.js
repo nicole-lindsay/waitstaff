@@ -64,6 +64,16 @@ angular.module('myApp', ['ngRoute'])
 
 .controller('myEarnings', function($rootScope, $window) {
     var main = this;
+
+    main.cancelTransaction = function() {
+        main.baseMeal = 0;
+        main.taxRate = 0;
+        main.tipPercent = 0;
+        main.tip = 0;
+        main.tax = 0;
+        main.total = 0;
+    };
+
     main.resetForm = function() {
         main.cancelTransaction();
         $rootScope.tipTotal = 0;
