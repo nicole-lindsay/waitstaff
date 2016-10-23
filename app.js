@@ -1,3 +1,6 @@
+var storeStuff = [];
+
+
 angular.module('myApp', ['ngRoute'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/', {
@@ -13,11 +16,11 @@ angular.module('myApp', ['ngRoute'])
             controller: 'myEarnings',
             controllerAs: 'main'
         }).when('/error', {
-        	template: '<p>Page does not exist</p>'
+            template: '<p>Page does not exist</p>'
         }).otherwise('/error')
     }])
 
-.controller('newMeal', function($rootScope) {
+.controller('newMeal', function($rootScope, $window) {
     var main = this;
     main.submitted = false;
     main.tip = 0;
@@ -26,6 +29,7 @@ angular.module('myApp', ['ngRoute'])
     $rootScope.tipTotal = 0;
     $rootScope.mealCount = 0;
     $rootScope.average = 0;
+
 
     main.submitAmounts = function(valid) {
         if (valid) {
@@ -39,6 +43,10 @@ angular.module('myApp', ['ngRoute'])
             $rootScope.mealCount++;
             $rootScope.tipTotal += main.tip;
             $rootScope.average = $rootScope.tipTotal / $rootScope.mealCount;
+            storeStuff.push({
+                average: $rootScope.average,
+                tipTotal: $rootScope.tipTotal
+            });
         } else {
             alert("You need to enter a positive number in all fields");
         }
@@ -54,13 +62,12 @@ angular.module('myApp', ['ngRoute'])
     };
 })
 
-.controller('myEarnings', function($rootScope) {
+.controller('myEarnings', function($rootScope, $window) {
     var main = this;
     main.resetForm = function() {
         main.cancelTransaction();
         $rootScope.tipTotal = 0;
         $rootScope.mealCount = 0;
         $rootScope.average = 0;
-        
     };
 });
