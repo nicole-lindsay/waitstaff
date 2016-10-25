@@ -2,16 +2,18 @@ body {
 	font-family: 'Slabo 27px', serif;
 }
 
-#mealDetails, #custCharges, #earnInfo {
-	border-style: solid;
-	border-width: thin;
-	padding-left: 7em;
-	padding-right: 7em;
+#routes {
+	text-align: center;
 }
 
-#waitstaff {
-	display: flex;
-	justify-content: space-around;
+#mealDetails, #custCharges, #earnInfo, #info {
+	border-style: solid;
+	border-width: thin;
+	padding-left: 10em;
+	padding-right: 10em;
+	margin-left: 15em;
+	margin-right: 15em;
+	text-align: center;
 }
 
 .boxTitle {
@@ -23,10 +25,6 @@ h1 {
 	text-align: center;
 }
 
-#buttons {
-	margin-left: 2em;
-}
-
-#resetButton {
-	padding-top: 10em;
+#reset {
+	margin-left: 49em;
 }
