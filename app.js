@@ -1,6 +1,5 @@
 var storeStuff = [];
 
-
 angular.module('myApp', ['ngRoute'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/', {
@@ -29,7 +28,6 @@ angular.module('myApp', ['ngRoute'])
     $rootScope.tipTotal = 0;
     $rootScope.mealCount = 0;
     $rootScope.average = 0;
-
 
     main.submitAmounts = function(valid) {
         if (valid) {
@@ -64,7 +62,6 @@ angular.module('myApp', ['ngRoute'])
 
 .controller('myEarnings', function($rootScope, $window) {
     var main = this;
-
     main.cancelTransaction = function() {
         main.baseMeal = 0;
         main.taxRate = 0;
