@@ -1,30 +1,101 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+}
+
+.loading {
+    position: relative;
+    height: 100%;
+}
+
+.loading:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    background: rgba(249, 129, 110, 0.9) no-repeat center center;
+    background-image: url('balls.gif');
+}
+
+.animate-container {
+    position: relative;
+    min-height: 100%;
+}
+
+.animate-this.ng-enter,
+.animate-this.ng-leave {
+    transition: 1s linear all;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.animate-this.ng-enter {
+    opacity: 0;
+    z-index: 100;
+}
+
+.animate-this.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+.animate-this.ng-leave {
+    opacity: 1;
+    z-index: 99;
+}
+
+.animate-this.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+a {
+    font-size: 1em;
+    transition: 1s;
+}
+
+a:hover {
+    font-size: 2em;
+    color: #c5523f;
+}
+
 body {
-	font-family: 'Slabo 27px', serif;
+    font-family: 'Slabo 27px', serif;
 }
 
-#routes {
-	text-align: center;
+#routes,
+h1,
+.boxTitle,
+#mealDetails,
+#custCharges,
+#earnInfo,
+#info {
+    text-align: center;
 }
 
-#mealDetails, #custCharges, #earnInfo, #info {
-	border-style: solid;
-	border-width: thin;
-	padding-left: 10em;
-	padding-right: 10em;
-	margin-left: 15em;
-	margin-right: 15em;
-	text-align: center;
+#mealDetails,
+#custCharges,
+#earnInfo,
+#info {
+    border-style: solid;
+    border-width: thin;
+    padding-left: 10em;
+    padding-right: 10em;
+    margin-left: 15em;
+    margin-right: 15em;
 }
 
 .boxTitle {
-	border-bottom: solid;
-	text-align: center;
-}
-
-h1 {
-	text-align: center;
+    border-bottom: solid;
 }
 
 #reset {
-	margin-left: 49em;
+    margin-left: 49em;
 }
