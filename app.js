@@ -1,6 +1,6 @@
 var storeStuff = [];
 
-angular.module('myApp', ['ngRoute'])
+angular.module('myApp', ['ngRoute', 'ngAnimate'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/', {
             templateUrl: 'info.html'
